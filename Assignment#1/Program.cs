@@ -1,5 +1,6 @@
 ﻿using System;
 using System.Collections.Generic;
+using namespace OOP_AS1_ADRIAN_BENEDICT_CUARTERO
 
 public enum Kind { Dog, Cat, Lizard, Bird }
 public enum Gender { Male, Female }
@@ -176,17 +177,17 @@ public class Program
         Console.Write("Enter the kind of pet (Dog, Cat, Lizard, Bird): ");
         if (!Enum.TryParse(Console.ReadLine()?.Trim(), true, out Kind kind))
         {
-            throw new ArgumentException("Invalid pet kind. Please enter Dog, Cat, Lizard, or Bird.");
+            throw new ArgumentException("Invalid kind of pet. Please choose the only variety on the list only");
         }
         return kind;
     }
 
     private static Gender GetGender()
     {
-        Console.Write("Enter the gender (Male, Female): ");
+        Console.Write("Enter the pet gender (Male, Female): ");
         if (!Enum.TryParse(Console.ReadLine()?.Trim(), true, out Gender gender))
         {
-            throw new ArgumentException("Invalid gender. Please enter Male or Female.");
+            throw new ArgumentException("Error! Please enter Male or Female.");
         }
         return gender;
     }
